@@ -1,0 +1,10 @@
+{
+  "timestamp": "20260317_1551",
+  "current_elec_rate": 0.457,
+  "nl_high_threshold": 0.64,
+  "grid_full_km": 10.0,
+  "calibration_logic": "NightLights > 0.64 OR GridDistKm < 10.0km",
+  "source_nightlights": "VIIRS DNB 2020 (NASA/NOAA)",
+  "source_grid_dist": "VIDA distance_to_existing_transmission_lines",
+  "reference_rate": "World Bank WDI 2023 \u2014 Benin 45.7%"
+}

@@ -1,0 +1,68 @@
+general:
+  planning_horizon_years: 15
+  discount_rate: 0.10
+  base_year: 2025
+  avg_household_size: 5.2        # Benin DHS 2017-18 average
+  currency: USD
+
+demand:
+  mtf_tiers:
+    tier_1: 4.3                  # kWh/household/year — very basic lighting
+    tier_2: 73.0                 # kWh/household/year — lighting + phone charging + fan
+    tier_3: 365.0                # kWh/household/year — lighting + productive use
+    tier_4: 1095.0               # kWh/household/year — medium appliances
+    tier_5: 2737.0               # kWh/household/year — high consumption
+  default_tier: 2
+  demand_growth_rate: 0.04       # 4% per year (consistent with Benin GDP growth)
+  electrification_rate_initial: 0.65   # % of HH connected at t=0 in unelectrified settlements
+  electrification_rate_target: 1    # % of HH connected by end of horizon
+
+  # Tier assignment weights
+  rwi_thresholds:
+    high: 0.5
+    medium: 0.0
+
+  building_mix_thresholds:
+    high: 0.30                   # >30% medium+large buildings → higher tier
+    medium: 0.10
+
+  # Institutional / anchor loads
+  institutional:
+    health_facility_kwh_year: 3000     # per facility
+    school_kwh_year: 1500              # per facility
+    productive_use_factor: 0.15        # 15% top-up for productive use
+
+grid_extension:
+  capex_per_km_mv: 45000         # USD/km for MV line (33kV)
+  capex_per_connection: 400      # USD per household connection
+  opex_rate: 0.02                # 2% of CAPEX per year
+  lifetime_years: 30
+  loss_rate: 0.12                # 12% technical losses
+  max_viable_distance_km: 25     # Beyond this, grid is not considered
+  hv_threshold_kv: 63            # Voltage threshold for HV vs MV costing
+  capex_per_km_hv: 80000         # USD/km for HV spur line
+
+mini_grid:
+  capex_per_kw: 3500             # USD/kW (solar-diesel hybrid)
+  capex_per_connection: 300      # USD per household connection
+  opex_rate: 0.03                # 3% of CAPEX per year
+  lifetime_years: 20
+  battery_replacement_year: 10
+  battery_cost_kwh: 250          # USD/kWh of battery storage
+  battery_hours: 4               # hours of storage
+  loss_rate: 0.08
+  min_connections: 50            # minimum for viability
+  peak_demand_factor: 0.25       # kW per household (peak demand coefficient)
+
+shs:
+  tier_2:
+    capex_per_unit: 150          # USD
+    opex_per_unit_year: 15       # USD/year
+    lifetime_years: 5
+    kwh_per_year: 73
+  tier_3:
+    capex_per_unit: 350
+    opex_per_unit_year: 30
+    lifetime_years: 7
+    kwh_per_year: 365
+  max_viable_connections: 150    # Above this, SHS less preferred vs mini-grid

@@ -1,0 +1,79 @@
+Scenario,Technology,Pct_settlements
+Lead-acid (yr 5),SHS,73.24
+Lead-acid (yr 5),Grid Extension,25.81
+Lead-acid (yr 5),Mini-Grid: Solar PV Only,0.48
+Lead-acid (yr 5),Mini-Grid: Mini-Hydro,0.47
+LFP conservative (yr 8),SHS,73.21
+LFP conservative (yr 8),Grid Extension,25.81
+LFP conservative (yr 8),Mini-Grid: Solar PV Only,0.51
+LFP conservative (yr 8),Mini-Grid: Mini-Hydro,0.47
+LFP base case (yr 10),SHS,73.21
+LFP base case (yr 10),Grid Extension,25.81
+LFP base case (yr 10),Mini-Grid: Solar PV Only,0.51
+LFP base case (yr 10),Mini-Grid: Mini-Hydro,0.47
+LFP optimistic (yr 12),SHS,73.21
+LFP optimistic (yr 12),Grid Extension,25.81
+LFP optimistic (yr 12),Mini-Grid: Solar PV Only,0.51
+LFP optimistic (yr 12),Mini-Grid: Mini-Hydro,0.47
+Subsidised ($150),SHS,73.21
+Subsidised ($150),Grid Extension,25.81
+Subsidised ($150),Mini-Grid: Solar PV Only,0.51
+Subsidised ($150),Mini-Grid: Mini-Hydro,0.47
+Low ($200),SHS,73.21
+Low ($200),Grid Extension,25.81
+Low ($200),Mini-Grid: Solar PV Only,0.51
+Low ($200),Mini-Grid: Mini-Hydro,0.47
+Base case ($280),SHS,73.21
+Base case ($280),Grid Extension,25.81
+Base case ($280),Mini-Grid: Solar PV Only,0.51
+Base case ($280),Mini-Grid: Mini-Hydro,0.47
+Full cost ($350),SHS,73.24
+Full cost ($350),Grid Extension,25.81
+Full cost ($350),Mini-Grid: Solar PV Only,0.48
+Full cost ($350),Mini-Grid: Mini-Hydro,0.47
+Low kit ($120),SHS,92.57
+Low kit ($120),Grid Extension,6.94
+Low kit ($120),Mini-Grid: Mini-Hydro,0.47
+Low kit ($120),Mini-Grid: Solar PV Only,0.02
+Base case ($150),SHS,73.21
+Base case ($150),Grid Extension,25.81
+Base case ($150),Mini-Grid: Solar PV Only,0.51
+Base case ($150),Mini-Grid: Mini-Hydro,0.47
+High kit ($180),SHS,71.72
+High kit ($180),Grid Extension,27.3
+High kit ($180),Mini-Grid: Solar PV Only,0.51
+High kit ($180),Mini-Grid: Mini-Hydro,0.47
+Low ($0.75/L),SHS,73.21
+Low ($0.75/L),Grid Extension,25.81
+Low ($0.75/L),Mini-Grid: Solar PV Only,0.51
+Low ($0.75/L),Mini-Grid: Mini-Hydro,0.47
+Base ($0.85/L),SHS,73.21
+Base ($0.85/L),Grid Extension,25.81
+Base ($0.85/L),Mini-Grid: Solar PV Only,0.51
+Base ($0.85/L),Mini-Grid: Mini-Hydro,0.47
+High ($1.00/L),SHS,73.21
+High ($1.00/L),Grid Extension,25.81
+High ($1.00/L),Mini-Grid: Solar PV Only,0.51
+High ($1.00/L),Mini-Grid: Mini-Hydro,0.47
+"Low threshold (10,000 kWh)",SHS,71.21
+"Low threshold (10,000 kWh)",Grid Extension,25.81
+"Low threshold (10,000 kWh)",Mini-Grid: Solar PV Only,1.62
+"Low threshold (10,000 kWh)",Mini-Grid: Mini-Hydro,1.36
+"Base case (15,000 kWh)",SHS,73.21
+"Base case (15,000 kWh)",Grid Extension,25.81
+"Base case (15,000 kWh)",Mini-Grid: Solar PV Only,0.51
+"Base case (15,000 kWh)",Mini-Grid: Mini-Hydro,0.47
+"High threshold (25,000 kWh)",SHS,73.99
+"High threshold (25,000 kWh)",Grid Extension,25.81
+"High threshold (25,000 kWh)",Mini-Grid: Mini-Hydro,0.14
+"High threshold (25,000 kWh)",Mini-Grid: Solar PV Only,0.06
+Base case (all technologies),SHS,73.21
+Base case (all technologies),Grid Extension,25.81
+Base case (all technologies),Mini-Grid: Solar PV Only,0.51
+Base case (all technologies),Mini-Grid: Mini-Hydro,0.47
+No hydro (→ Solar/Hybrid),SHS,73.51
+No hydro (→ Solar/Hybrid),Grid Extension,25.81
+No hydro (→ Solar/Hybrid),Mini-Grid: Solar PV Only,0.69
+"Solar MG only (no hydro, no hybrid)",SHS,73.51
+"Solar MG only (no hydro, no hybrid)",Grid Extension,25.81
+"Solar MG only (no hydro, no hybrid)",Mini-Grid: Solar PV Only,0.69

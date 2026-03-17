@@ -1,0 +1,193 @@
+general:
+  planning_horizon_years: 15
+  discount_rate: 0.1
+  base_year: 2025
+  avg_household_size: 5.2
+  currency: USD
+  access_targets:
+    phase_1:
+      year: 2030
+      national_access_rate: 0.6
+      label: Phase 1 (→2030)
+    phase_2:
+      year: 2035
+      national_access_rate: 0.85
+      label: Phase 2 (→2035)
+    phase_3:
+      year: 2040
+      national_access_rate: 1.0
+      label: Phase 3 (→2040)
+demand:
+  mtf_tiers:
+    tier_1: 4.3
+    tier_2: 73.0
+    tier_3: 365.0
+    tier_4: 1095.0
+    tier_5: 2737.0
+  default_tier: 2
+  demand_intensity_growth_rate: 0.03
+  population_growth_rate: 0.027
+  rural_unelec_share: 0.4
+  demand_growth_rate: 0.041
+  electrification_rate_initial: 0.3
+  electrification_rate_target: 0.9
+  tier_progression:
+    enabled: true
+    years_to_target_tier: 5
+  rwi_thresholds:
+    high: 0.5
+    medium: 0.0
+  building_mix_thresholds:
+    high: 0.3
+    medium: 0.1
+  institutional:
+    health_facility_kwh_year: 3000
+    school_kwh_year: 1500
+    productive_use_factor: 0.15
+  productive_use:
+    enabled: true
+    coverage_share: 0.25
+    uplift_factor: 1.3
+    qualifying_criteria:
+    - has_health_facility
+    - has_education_facility
+    - LandCover_cropland
+    note: Productive use anchor loads (mills, cold storage, irrigation, health/schools)
+      increase settlement demand by 30%, pushing more settlements above the MG threshold.
+      Coverage 25% is conservative — field surveys recommended.
+grid_extension:
+  capex_per_km_mv: 45000
+  capex_per_connection: 400
+  opex_rate: 0.02
+  lifetime_years: 30
+  loss_rate: 0.12
+  max_viable_distance_km: 999
+  hv_threshold_kv: 63
+  capex_per_km_hv: 80000
+  generation_capex_per_kw: 950
+  transmission_capex_per_km: 80000
+  load_factor: 0.22
+  # Policy cap: maximum grid extension sites across all phases combined.
+  # Sites that would have won grid but breach the cap are redirected to
+  # the next-cheapest feasible technology (Solar MG → Hybrid → SHS).
+  # Set to null to disable the cap (pure least-cost baseline).
+  grid_cap_sites: null   # no cap — pure least-cost baseline
+mini_grid:
+  capex_per_kw: 3500
+  capex_per_connection: 300
+  opex_rate: 0.03
+  lifetime_years: 20
+  battery_replacement_year: 10
+  battery_cost_kwh: 250
+  battery_hours: 4
+  loss_rate: 0.08
+  min_connections: 50
+  peak_demand_factor: 0.25
+shs:
+  tier_2:
+    capex_per_unit: 150
+    opex_per_unit_year: 15
+    lifetime_years: 5
+    kwh_per_year: 73
+  tier_3:
+    capex_per_unit: 350
+    opex_per_unit_year: 30
+    lifetime_years: 7
+    kwh_per_year: 365
+  max_viable_connections: 150
+  price_decline:
+    enabled: true
+    annual_rate: 0.05
+    floor_year: 2030
+    floor_pct: 0.7
+sensitivity_nb04:
+  battery_replacement:
+    description: Battery chemistry and replacement cycle for solar mini-grids
+    base_case:
+      battery_replace_yr: 10
+      battery_cost_kwh: 270
+    sensitivity_range:
+    - label: Lead-acid (pessimistic)
+      battery_replace_yr: 5
+      battery_cost_kwh: 150
+    - label: LFP base case
+      battery_replace_yr: 10
+      battery_cost_kwh: 270
+    - label: LFP optimistic
+      battery_replace_yr: 12
+      battery_cost_kwh: 270
+  mg_connection_cost:
+    description: Mini-grid connection cost per household
+    base_case: 280
+    sensitivity_range:
+    - 150
+    - 280
+    - 350
+  shs_kit_cost:
+    description: SHS Tier-2 kit cost per household
+    base_case: 150
+    sensitivity_range:
+    - 120
+    - 150
+    - 180
+  diesel_price:
+    description: Diesel fuel base price
+    base_case: 0.85
+    sensitivity_range:
+    - 0.75
+    - 0.85
+    - 1.0
+  productive_use_factor:
+    description: Demand multiplier for productive use settlements
+    base_case_cropland: 1.25
+    base_case_urban: 1.4
+    sensitivity_range:
+    - 1.0
+    - 1.25
+    - 1.5
+  mg_demand_threshold:
+    description: Minimum annual demand for mini-grid feasibility
+    base_case_solar: 10000
+    base_case_hybrid: 25000
+    base_case_hydro: 10000
+    sensitivity_range_solar:
+    - 10000
+    - 15000
+    - 25000
+    note: Lowered from 15,000 to 10,000 kWh/yr — aligned with IRENA small run-of-river
+      minimum and ESMAP lower bound (~3kW system × 8760h × 0.22CF ≈ 9,500 kWh/yr).
+      Increases Solar MG feasible pool from ~970 to ~1,670 settlements.
+  population_growth_rate:
+    description: Benin population growth rate (affects new HH count per settlement)
+    base_case: 0.027
+    sensitivity_range:
+    - 0.02
+    - 0.027
+    - 0.033
+    note: Low=optimistic fertility decline. High=UN high-fertility variant.
+  demand_intensity_growth:
+    description: Income-driven per-HH electricity demand growth rate
+    base_case: 0.03
+    sensitivity_range:
+    - 0.02
+    - 0.03
+    - 0.04
+    note: Low=slow income growth (post-shock scenario). High=GDP-matched.
+generation:
+  solar_pv_capex_per_kw: 900
+  solar_pv_opex_per_kw_year: 15
+  solar_pv_lifetime_years: 25
+  bess_capex_per_kwh: 250
+  bess_hours: 4
+  required_new_capacity_mw: 500
+  estimated_total_cost_usd: 585000000
+transmission:
+  mv_reinforcement_cost_usd: 80000000
+  hv_spur_cost_usd: 120000000
+  estimated_total_cost_usd: 200000000
+programme:
+  aberme_capacity_building_usd: 20000000
+  regulatory_reform_usd: 10000000
+  household_surveys_usd: 5000000
+  productive_use_programme_usd: 45000000
+  estimated_total_cost_usd: 80000000
