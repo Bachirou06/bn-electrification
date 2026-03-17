@@ -1,9 +1,9 @@
 # 🇧🇯 Benin Least-Cost Electrification Analysis
 
-A Python electrification planning model comparing Grid, Mini-Grid, and Solar Home Systems across **17,205 settlements** in Benin over a 15-year horizon (2025–2040), built on VIDA satellite settlement data and OnSSET methodology.
+A Python electrification planning model comparing Grid, Mini-Grid, and Solar Home Systems across **17,205 settlements** in Benin over a 15-year horizon (2025–2040), built on VIDA satellite settlement data.
 
 ---
-SHS is the dominant technology in **all 17 sensitivity scenarios** (42–49%). The mini-grid demand threshold is the most influential assumption (±5 pp swing on Solar MG share).
+SHS is the dominant technology in **all 17 sensitivity scenarios** (42–49%). The mini-grid demand threshold is the most influential assumption.
 
 ---
 
