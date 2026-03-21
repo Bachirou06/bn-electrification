@@ -70,7 +70,7 @@ jupyter notebook
 |---|---|
 | `00_gis_layer_extraction.ipynb` | Attaches GHI, slope, hydro, nightlights to settlements |
 | `01_data_exploration.ipynb` | EDA and data quality checks |
-| `02_demand_model.ipynb` | MTF-tier demand estimation per settlement |
+| `02_demand_model.ipynb` | Demand estimation per settlement |
 | `03_lcoe_model.ipynb` | LCOE computation + technology selection |
 | `04_sensitivity_analysis.ipynb` | 17-scenario parametric sensitivity |
 
@@ -96,7 +96,7 @@ Opens at `http://localhost:8501`. The app auto-loads the most recent CSV from `d
 ├── notebooks/
 │   ├── 00_gis_layer_extraction.ipynb   # GIS enrichment (GHI, slope, hydro, NTL)
 │   ├── 01_data_exploration.ipynb       # EDA and settlement characterisation
-│   ├── 02_demand_model.ipynb           # MTF-tier demand estimation
+│   ├── 02_demand_model.ipynb           # Demand estimation
 │   ├── 03_lcoe_model.ipynb             # LCOE + technology selection
 │   └── 04_sensitivity_analysis.ipynb   # 17-scenario parametric sensitivity
 ├── src/
